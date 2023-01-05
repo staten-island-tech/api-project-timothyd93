@@ -1,4 +1,4 @@
-import "./style.css";
+import "../styles/style.css";
 
 const URL = "https://api.quotable.io/random";
 
