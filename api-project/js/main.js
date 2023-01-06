@@ -1,6 +1,6 @@
 import "../styles/style.css";
 
-const URL = "https://api.quotable.io/random";
+const URL = "https://official-joke-api.appspot.com/random_joke";
 
 async function getData(URL) {
   try {
