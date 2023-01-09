@@ -1,6 +1,6 @@
 import "../styles/style.css";
-
-const URL = "https://official-joke-api.appspot.com/random_joke";
+const word = `Hello`;
+const URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
 async function getData(URL) {
   try {
