@@ -1,5 +1,6 @@
 const DOMSelectors = {
-  response: document.getElementById("api-response"),
+  name: document.getElementById("pokemonname"),
+  abilitylist: document.getElementById("pokemonabilities"),
   searchbar: document.getElementById("pokemonenter"),
   searchbtn: document.getElementById("search"),
 };
