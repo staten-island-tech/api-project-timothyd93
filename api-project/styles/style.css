@@ -1,13 +1,34 @@
 @import url(variable.css);
 html,
-body, * {margin: 0; padding: 0; box-sizing: border-box; font-size: 62.5%; background-color:
-  }
-#header {
-    text-align: center;
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: ;
 }
-#searchbar{
+#header {
+  text-align: center;
+}
+#searchbar {
   font-size: 2rem;
 }
-#search {font-size: 1.5rem;}
-#content
-.pokecard {font-size: 2.5rem;}
+#search {
+  font-size: 1.5rem;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.pokecard {
+  font-size: 10px;
+}
+.pokemonimg {
+  height: 250px;
+  width: 250px;
+}
+.pokemonname {
+  font-size: 100px;
+}

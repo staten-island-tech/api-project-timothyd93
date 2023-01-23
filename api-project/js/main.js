@@ -41,7 +41,7 @@ function searchPokemon() {
       let img = data.sprites.front_default;
       DOMSelectors.content.insertAdjacentHTML(
         "beforeend",
-        `<div class = pokecard> <p> ${name} </p> <img src= ${img}>  </div>`
+        `<div class = "pokecard"> <p id="pokemonname"> ${name} </p> <img src= ${img} class ="pokemonimg">  </div>`
       );
     } catch (error) {
       // DOMSelectors.name.textContent = `ERROR`;
