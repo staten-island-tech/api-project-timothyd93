@@ -22,6 +22,7 @@ body,
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  font-size: 8rem;
 }
 
 .pokecard{
@@ -29,7 +30,6 @@ body,
   height: 640px;
   width: 400px;
   text-align: center;
-
 }
 
 .pokemonimg {
@@ -37,5 +37,12 @@ body,
   width: 400px  ;
 }
 #pokemonname {
-  font-size: 50px;
+  font-size: 4.5rem;
+}
+.pokemonabilities{
+  font-size: 2rem;
+}
+.errormsg{
+  text-align: center;
+  font-size: 6rem;
 }
