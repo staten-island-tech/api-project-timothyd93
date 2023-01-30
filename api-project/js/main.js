@@ -8,9 +8,96 @@ function gen1Pokemon() {
       const response = await fetch(URL);
       const data = await response.json();
       console.log(data);
-      data.results.forEach((pokemon) => console.log(pokemon.url));
+      data.results.forEach(async (pokemon) => {
+        const response2 = await fetch(pokemon.url);
+        const data2 = await response2.json();
+        console.log(data2);
+        let name = data2.name;
+        let img = data2.sprites.front_shiny;
+        let ability = data2.abilities[0].ability.name;
+        let hp = data2.stats[0].base_stat;
+        let type = data2.types[0].type.name;
+        DOMSelectors.content.insertAdjacentHTML(
+          "beforeend",
+          `<div class = "pokecard"> 
+          <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
+          <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+          <p class="pokemonstats">base hp: ${hp}</p> 
+          <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
+          <p class="pokemonstats"> type: ${type}</p>
+          </div>`
+        );
+      });
     } catch (error) {
-      console.log(`Error`);
+      console.log(error);
+    }
+  }
+  getData(URL);
+}
+
+function gen2Pokemon() {
+  const URL = `https://pokeapi.co/api/v2/pokemon/?offset=151&limit=100/`;
+  async function getData(URL) {
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      console.log(data);
+      data.results.forEach(async (pokemon) => {
+        const response2 = await fetch(pokemon.url);
+        const data2 = await response2.json();
+        console.log(data2);
+        let name = data2.name;
+        let img = data2.sprites.front_shiny;
+        let ability = data2.abilities[0].ability.name;
+        let hp = data2.stats[0].base_stat;
+        let type = data2.types[0].type.name;
+        DOMSelectors.content.insertAdjacentHTML(
+          "beforeend",
+          `<div class = "pokecard"> 
+          <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
+          <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+          <p class="pokemonstats">base hp: ${hp}</p> 
+          <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
+          <p class="pokemonstats"> type: ${type}</p>
+          </div>`
+        );
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  getData(URL);
+}
+
+function gen3Pokemon() {
+  const URL = `https://pokeapi.co/api/v2/pokemon/?offset=251&limit=135/`;
+  async function getData(URL) {
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      console.log(data);
+      data.results.forEach(async (pokemon) => {
+        const response2 = await fetch(pokemon.url);
+        const data2 = await response2.json();
+        console.log(data2);
+        let name = data2.name;
+        let img = data2.sprites.front_shiny;
+        let ability = data2.abilities[0].ability.name;
+        let hp = data2.stats[0].base_stat;
+        let type = data2.types[0].type.name;
+        DOMSelectors.content.insertAdjacentHTML(
+          "beforeend",
+          `<div class = "pokecard"> 
+          <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
+          <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+          <p class="pokemonstats">base hp: ${hp}</p> 
+          <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
+          <p class="pokemonstats"> type: ${type}</p>
+          </div>`
+        );
+      });
+    } catch (error) {
+      console.log(error);
     }
   }
   getData(URL);
@@ -28,9 +115,6 @@ function searchPokemon() {
       console.log(data);
       let name = data.name;
       let img = data.sprites.front_shiny;
-      let abilityArray = data.abilities.forEach((ability) =>
-        console.log(ability)
-      );
       let ability = data.abilities[0].ability.name;
       let hp = data.stats[0].base_stat;
       let type = data.types[0].type.name;
@@ -44,11 +128,6 @@ function searchPokemon() {
         <p class="pokemonstats"> type: ${type}</p>
         </div>`
       );
-      // data.abilities.forEach((abilityArray) =>
-      //   document
-      //     .getElementById("abilities")
-      //     .insertAdjacentHTML("beforeend", abilityArray.abilities.name)
-      // );
     } catch (error) {
       console.log(`Error`);
       DOMSelectors.content.insertAdjacentHTML(
@@ -61,15 +140,29 @@ function searchPokemon() {
   getData(URL);
 }
 
-DOMSelectors.searchbtn.addEventListener("click", function () {
-  removeContent();
-  searchPokemon();
-  clearInputs();
-});
-
 function removeContent() {
   const pokecardArray = Array.from(document.querySelectorAll(".pokecard"));
   pokecardArray.forEach((card) => card.remove());
   const errormsgArray = Array.from(document.querySelectorAll(".errormsg"));
   errormsgArray.forEach((msg) => msg.remove());
 }
+DOMSelectors.searchbtn.addEventListener("click", function () {
+  removeContent();
+  searchPokemon();
+  clearInputs();
+});
+DOMSelectors.gen1.addEventListener("click", function () {
+  removeContent();
+  gen1Pokemon();
+  clearInputs();
+});
+DOMSelectors.gen2.addEventListener("click", function () {
+  removeContent();
+  gen2Pokemon();
+  clearInputs();
+});
+DOMSelectors.gen3.addEventListener("click", function () {
+  removeContent();
+  gen3Pokemon();
+  clearInputs();
+});
