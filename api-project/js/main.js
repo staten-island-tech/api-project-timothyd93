@@ -8,17 +8,14 @@ function gen1Pokemon() {
       const response = await fetch(URL);
       const data = await response.json();
       console.log(data);
-      function pokemonArray() {
-        data.results.forEach((pokemon) => {
-          getData(pokemon.url);
-        });
-      }
+      data.results.forEach((pokemon) => console.log(pokemon.url));
     } catch (error) {
       console.log(`Error`);
     }
   }
   getData(URL);
 }
+
 function clearInputs() {
   DOMSelectors.searchbar.value = ``;
 }
@@ -30,14 +27,28 @@ function searchPokemon() {
       const data = await response.json();
       console.log(data);
       let name = data.name;
-      let img = data.sprites.front_default;
-      let ability1 = data.abilities[0].ability.name;
-      let ability2 = data.abilities[1].ability.name;
-
+      let img = data.sprites.front_shiny;
+      let abilityArray = data.abilities.forEach((ability) =>
+        console.log(ability)
+      );
+      let ability = data.abilities[0].ability.name;
+      let hp = data.stats[0].base_stat;
+      let type = data.types[0].type.name;
       DOMSelectors.content.insertAdjacentHTML(
         "beforeend",
-        `<div class = "pokecard"> <p id="pokemonname" class ="pokemoncontent"> ${name} </p> <img src= ${img} class ="pokemonimg">  <p  class ="pokemonabilities">${ability1}  </p> <p class="pokemonabilities"> ${ability2}</p>  </div>`
+        `<div class = "pokecard"> 
+        <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
+        <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+        <p class="pokemonstats">base hp: ${hp}</p> 
+        <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
+        <p class="pokemonstats"> type: ${type}</p>
+        </div>`
       );
+      // data.abilities.forEach((abilityArray) =>
+      //   document
+      //     .getElementById("abilities")
+      //     .insertAdjacentHTML("beforeend", abilityArray.abilities.name)
+      // );
     } catch (error) {
       console.log(`Error`);
       DOMSelectors.content.insertAdjacentHTML(
@@ -51,10 +62,9 @@ function searchPokemon() {
 }
 
 DOMSelectors.searchbtn.addEventListener("click", function () {
-  // removeContent();
-  // searchPokemon();
-  // clearInputs();
-  gen1Pokemon();
+  removeContent();
+  searchPokemon();
+  clearInputs();
 });
 
 function removeContent() {

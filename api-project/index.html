@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Pokedex</title>
   </head>
   <body id="container">
     <div id="header">
-      <p><input type="text" id="searchbar" /></p>
-      <p><button type="button" id="search">Find</button></p>
+      <h1 class="title">The Official Pokedex</h1>
+      <h1 class="subtitle">Search any pokemon!</h1>
+      <input type="text" id="searchbar" />
+      <p></p>
+      <button type="button" class="btn" id="search">Find</button>
+      <p></p>
+      <button type="button" class="btn" id="gen1">Gen 1 Pokemon</button>
+      <button type="button" class="btn" id="gen2">Gen 2 Pokemon</button>
+      <button type="button" class="btn" id="gen3">Gen 3 Pokemon</button>
     </div>
     <div id="content"></div>
     <script type="module" src="./js/main.js"></script>

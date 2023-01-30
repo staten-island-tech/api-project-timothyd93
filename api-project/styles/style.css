@@ -6,43 +6,67 @@ body,
   padding: 0;
   box-sizing: border-box;
   font-size: 62.5%;
-  background-color: ;
 }
 #header {
   text-align: center;
   margin-bottom: 5rem;
 }
 #searchbar {
-  font-size: 2rem;
+  margin-top: 4rem;
+  font-size: var(--h3);
 }
-#search {
-  font-size: 1.5rem;
+.btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 2rem;
+  border: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+  color: #fff;
+  margin: 2rem;
+  font-size: var(--h5);
+  padding: 2rem;
 }
 #content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  font-size: 8rem;
+  font-size: var(--h1);
+  background-color: var(--primary) ;
 }
 
 .pokecard{
   border: solid;
-  height: 640px;
-  width: 400px;
-  text-align: center;
-}
-
-.pokemonimg {
+  border-radius: 1.5rem;
   height: 400px;
-  width: 400px  ;
+  width: 300px;
+  text-align: center;
+  background-color: var(--secondary);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;}
+  
+.pokemonimg {
+  height: 200px;
+  width: 200px  ;
 }
 #pokemonname {
-  font-size: 4.5rem;
+  font-size: var(--h3);
 }
-.pokemonabilities{
-  font-size: 2rem;
+.pokemonstats{
+  font-size: var(--p);
 }
 .errormsg{
   text-align: center;
-  font-size: 6rem;
+  font-size: var(--h2);
+}
+.title{
+  font-size: var(--h1);
+  padding: 2rem;
+}
+#container{
+  background-color: var(--primary);
+}
+.subtitle {
+  font-size: var(--h4)
 }

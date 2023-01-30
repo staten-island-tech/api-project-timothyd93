@@ -1,0 +1,12 @@
+:root {
+    --off-white:#FF6865;
+    --light-white:#FFF5EE;
+    --h1: 7rem;
+    --h2: 5.25rem;
+    --h3: 3.5rem;
+    --h4: 2.5rem;
+    --h5: 1.5rem;
+    --p: 2rem;
+    --primary: var(--off-white);
+    --secondary: var(--light-white);
+  }
