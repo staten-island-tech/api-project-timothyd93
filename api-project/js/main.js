@@ -2,6 +2,7 @@ import { DOMSelectors } from "./dom";
 import "../styles/style.css";
 
 function gen1Pokemon() {
+  DOMSelectors.gen1.style.color = "#d4af37";
   const URL = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151/`;
   async function getData(URL) {
     try {
@@ -36,6 +37,7 @@ function gen1Pokemon() {
 }
 
 function gen2Pokemon() {
+  DOMSelectors.gen2.style.color = "#d4af37";
   const URL = `https://pokeapi.co/api/v2/pokemon/?offset=151&limit=100/`;
   async function getData(URL) {
     try {
@@ -70,6 +72,7 @@ function gen2Pokemon() {
 }
 
 function gen3Pokemon() {
+  DOMSelectors.gen3.style.color = "#d4af37";
   const URL = `https://pokeapi.co/api/v2/pokemon/?offset=251&limit=135/`;
   async function getData(URL) {
     try {
@@ -145,6 +148,9 @@ function removeContent() {
   pokecardArray.forEach((card) => card.remove());
   const errormsgArray = Array.from(document.querySelectorAll(".errormsg"));
   errormsgArray.forEach((msg) => msg.remove());
+  DOMSelectors.gen1.style.color = "";
+  DOMSelectors.gen2.style.color = "";
+  DOMSelectors.gen3.style.color = "";
 }
 DOMSelectors.searchbtn.addEventListener("click", function () {
   removeContent();
