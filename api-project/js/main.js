@@ -136,7 +136,7 @@ const searchFunctions = {
         DOMSelectors.content.insertAdjacentHTML(
           "beforeend",
           `<div class ="errormsg"> <p> Sorry, we were unable to find the pokemon you were looking for</p>
-        <p> Make sure you spelled the pokemon's name correctly</p> </div>`
+         </div>`
         );
       }
     }
