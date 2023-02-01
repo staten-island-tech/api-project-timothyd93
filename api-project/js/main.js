@@ -23,7 +23,7 @@ const genFunctions = {
             "beforeend",
             `<div class = "pokecard"> 
           <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
-          <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+          <img src= ${img} alt = "the front of ${name}" class ="pokemonimg"> 
           <p class="pokemonstats">base hp: ${hp}</p> 
           <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
           <p class="pokemonstats"> type: ${type}</p>
@@ -58,7 +58,7 @@ const genFunctions = {
             "beforeend",
             `<div class = "pokecard"> 
           <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
-          <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+          <img src= ${img} alt = "the front of ${name}" class ="pokemonimg"> 
           <p class="pokemonstats">base hp: ${hp}</p> 
           <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
           <p class="pokemonstats"> type: ${type}</p>
@@ -93,7 +93,7 @@ const genFunctions = {
             "beforeend",
             `<div class = "pokecard"> 
           <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
-          <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+          <img src= ${img} alt = "the front of ${name}" class ="pokemonimg"> 
           <p class="pokemonstats">base hp: ${hp}</p> 
           <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
           <p class="pokemonstats"> type: ${type}</p>
@@ -125,7 +125,7 @@ const searchFunctions = {
           "beforeend",
           `<div class = "pokecard"> 
         <h1 id="pokemonname" class ="pokemoncontent"> ${name} </h1> 
-        <img src= ${img} alt = "${name} posing" class ="pokemonimg"> 
+        <img src= ${img} alt = "the front of ${name}" class ="pokemonimg"> 
         <p class="pokemonstats">base hp: ${hp}</p> 
         <p class ="pokemonstats" id="abilities"> base ability: ${ability} </p>
         <p class="pokemonstats"> type: ${type}</p>

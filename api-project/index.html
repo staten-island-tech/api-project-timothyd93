@@ -5,11 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body id="container">
-    <div id="header">
+    <header id="header">
       <h1 class="title">The Official Pokedex</h1>
-      <h1 class="subtitle">Search any pokemon!</h1>
+      <label class="subtitle" for="searchbar"> Search any pokemon!</label>
+      <p></p>
       <input type="text" id="searchbar" />
       <p></p>
       <button type="button" class="btn" id="search">Find</button>
@@ -17,7 +22,7 @@
       <button type="button" class="btn" id="gen1">Gen 1 Pokemon</button>
       <button type="button" class="btn" id="gen2">Gen 2 Pokemon</button>
       <button type="button" class="btn" id="gen3">Gen 3 Pokemon</button>
-    </div>
+    </header>
     <div id="content"></div>
     <script type="module" src="./js/main.js"></script>
   </body>
