@@ -110,7 +110,7 @@ const genFunctions = {
 
 const searchFunctions = {
   searchPokemon: function () {
-    const URL = `https://pokeapi.co/api/v2/pokemon/${DOMSelectors.searchbar.value}`;
+    const URL = `https://pokeapi.co/api/v2/pokemon/${DOMSelectors.searchbar.value.toLowerCase()}`;
     async function getData(URL) {
       try {
         const response = await fetch(URL);
@@ -135,8 +135,8 @@ const searchFunctions = {
         console.log(`Error`);
         DOMSelectors.content.insertAdjacentHTML(
           "beforeend",
-          `<div class ="errormsg"> <p> Sorry, we could not find the pokemon you were looking for</p>
-        <p> Make sure you used all lowercase and spelled the pokemon's name correctly</p> </div>`
+          `<div class ="errormsg"> <p> Sorry, we were unable to find the pokemon you were looking for</p>
+        <p> Make sure you spelled the pokemon's name correctly</p> </div>`
         );
       }
     }
